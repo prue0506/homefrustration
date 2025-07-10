@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homefrustration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto;
+      max-width: 120px;
+      height: auto;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .card {
+      perspective: 1000px;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 5;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      padding: 1rem;
+    }
+    .card-front {
+      background-color: #fff;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background-color: #000;
+      color: #fff;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: bold;
+      min-height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .cta-link {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      color: #000;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      align-self: center;
+    }
+    .card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .card p {
+      font-size: 1rem;
+    }
+    @media (max-width: 480px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="transparentbottom.png" alt="Logo" class="logo">
+  <h1>What's Your Home Frustration?</h1>
+  <div class="card-grid">
+    <!-- Sensor Soap Pump -->
+    <div class="card" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="scene-foampump.png" alt="Sensor Soap Pump" class="card-image">
+          <p>I just touched raw chicken. Now I have to touch the soap bottle too?</p>
+        </div>
+        <div class="card-back">
+          <div class="product-name">Sensor Soap Pump</div>
+          <div class="product-image">
+            <img src="draft-foampump.png" alt="Sensor Soap Pump">
+          </div>
+          <a class='cta-link' href='https://www.simplehuman.com/pages/indepth-sensor-pump-foam' target='_blank'>View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sensor Mirror -->
+    <div class="card" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="scene-mirror.png" alt="Sensor Mirror" class="card-image">
+          <p>I twist, I tilt, I tap. Still can’t get the right light for my makeup.</p>
+        </div>
+        <div class="card-back">
+          <div class="product-name">Sensor Mirror</div>
+          <div class="product-image">
+            <img src="draft-mirror.png" alt="Sensor Mirror">
+          </div>
+          <a class='cta-link' href='https://www.simplehuman.com/pages/indepth-sensor-mirror-trio' target='_blank'>View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cleanstation -->
+    <div class="card" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="scene-cleanstation.png" alt="Cleanstation" class="card-image">
+          <p>My phone’s been through the subway, the bathroom, and who knows what else...</p>
+        </div>
+        <div class="card-back">
+          <div class="product-name">Cleanstation</div>
+          <div class="product-image">
+            <img src="draft-cleanstation.png" alt="Cleanstation">
+          </div>
+          <a class='cta-link' href='https://www.simplehuman.com/pages/indepth-cleanstation' target='_blank'>View Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sensor Trash Can -->
+    <div class="card" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="scene-sensorcan.png" alt="Sensor Trash Can" class="card-image">
+          <p>Every time I need the bin, it’s a foot pedal fight.</p>
+        </div>
+        <div class="card-back">
+          <div class="product-name">Voice-activated Trash Can</div>
+          <div class="product-image">
+            <img src="draft-sensorcan.png" alt="Sensor Trash Can">
+          </div>
+          <a class='cta-link' href='https://www.simplehuman.com/pages/indepth-sensor-can-rectangular' target='_blank'>View Product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleFlip(card) {
+      card.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>
