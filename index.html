@@ -59,18 +59,19 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
-      text-align: center;
       padding: 1rem;
     }
     .card-front {
       background-color: #fff;
+      color: #000;
     }
     .card-back {
       transform: rotateY(180deg);
       background-color: #000;
       color: #fff;
+      align-items: center;
+      text-align: center;
     }
     .product-name {
       font-size: 1rem;
@@ -107,13 +108,27 @@
       height: 180px;
       object-fit: contain;
       border-radius: 10px;
+      display: block;
     }
     .card p {
       font-size: 1rem;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     @media (max-width: 480px) {
       .card-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .card-front, .card-back {
+        padding: 1rem;
+      }
+      .card-image {
+        height: 180px;
+      }
+      .card p {
+        min-height: 3.5rem;
       }
     }
   </style>
